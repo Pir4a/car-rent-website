@@ -11,7 +11,7 @@ function Navbar() {
   }
 
   return (
-    <nav className="flex justify-between items-center h-28 px-5">
+    <nav className="bg-gray flex justify-between items-center h-28 px-5">
       <img src={logo} className="w-[9rem]" />
       <RxHamburgerMenu
         className={menuOpen ? "size-8 text-orange" : "size-8"}

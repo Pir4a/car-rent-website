@@ -14,6 +14,7 @@ export default {
       colors: {
         orange: "#FA4432",
         orangelight: "#FA4532",
+        gray: "#f8f8f8",
       },
       fontFamily: {
         rubik: ["Rubik"],

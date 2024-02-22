@@ -4,8 +4,8 @@ import { MdNavigateNext } from "react-icons/md"
 function Hero() {
   return (
     <>
-      <div className="hero font-rubik">
-        <div className="hero-text flex flex-col justify-center gap-4 items-center text-center px-4 py-4">
+      <div className="hero font-rubik bg-gray pb-36">
+        <div className="hero-text flex flex-col justify-center gap-4 items-center text-center px-4 py-12">
           <h4 className="font-bold text-2xl">Plan your trip now</h4>
           <h1 className="font-bold text-large">
             Save <span className="text-orange font-normal>">big</span> with our
@@ -17,12 +17,15 @@ function Hero() {
           </p>
         </div>
         <div className="hero-btns flex flex-col justify-center gap-4 items-center mt-6">
-          <button className="flex items-center gap-3 w-2/3 h-16 justify-center rounded bg-orangelight shadow-md shadow-orange text-white font-bold">
+          <a
+            href="#carbook"
+            className="flex items-center gap-3 w-2/3 h-16 justify-center rounded bg-orangelight shadow-md shadow-orange text-white font-bold"
+          >
             Book Ride <FaCar />
-          </button>
-          <button className="flex items-center gap-1 w-2/3 h-16 justify-center bg-black text-white font-bold">
+          </a>
+          <a className="flex items-center gap-1 w-2/3 h-16 justify-center bg-black text-white font-bold">
             Learn More <MdNavigateNext className="size-6" />
-          </button>
+          </a>
         </div>
       </div>
     </>
