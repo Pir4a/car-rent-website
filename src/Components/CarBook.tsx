@@ -4,9 +4,11 @@ import { HiMapPin } from "react-icons/hi2"
 import { FaCalendarDay } from "react-icons/fa"
 import { RxCross2 } from "react-icons/rx"
 import { HiInformationCircle } from "react-icons/hi"
-import cardata, { CAR_DATA } from "../Components/CarData"
+import cardata from "../Components/CarData"
 
 function CarBook() {
+  const modalid: any = document.getElementById("modal")
+
   const [modal, setModal] = useState(false)
 
   const [carType, setCarType] = useState(0)
@@ -77,13 +79,78 @@ function CarBook() {
     setDropTime(e.target.value)
   }
 
+  useEffect(() => {
+    if (modal === true) {
+      document.body.style.overflow = "hidden"
+      modalid.style.overflow = "auto"
+    } else {
+      document.body.style.overflow = "auto"
+    }
+  }, [modal])
+
+  const [isDone, setIsDone] = useState(false)
+  const [isAllFields, setIsAllFields] = useState(false)
+
+  function search(e: any) {
+    if (pickUp == "" || dropOff == "" || pickTime == "" || dropTime == "") {
+      setIsAllFields(true)
+      return
+    }
+    setIsAllFields(false)
+    setModal(true)
+  }
+
+  function confirmBooking(e: any) {
+    if (
+      name == "" ||
+      lastName == "" ||
+      phone == "" ||
+      email == "" ||
+      address == "" ||
+      age == "" ||
+      city == "" ||
+      zipcode == ""
+    ) {
+      setIsAllFields(true)
+      modalid.scroll(0, 900)
+      return
+    }
+    e.preventDefault()
+    setModal(false)
+    setIsDone(true)
+    setIsAllFields(false)
+  }
+
   return (
     <div
       id="carbook"
-      className="bg-gray font-rubik flex justify-center max-h-dvh"
+      className="bg-gray font-rubik flex justify-center max-h-[110dvh] shadow-sm"
     >
       <form className="bg-white w-11/12 rounded shadow-lg flex flex-col gap-3 pl-14 py-12">
         <h2 className="font-bold text-2xl pb-5">Book a car</h2>
+        <p
+          className={
+            isDone
+              ? "flex text-center justify-center items-center bg-emerald-200 rounded-md py-2 pl-2  w-4/5 font-semibold text-slate-600 opacity-70"
+              : "hidden"
+          }
+        >
+          Check your email to confirm the order!
+          <RxCross2
+            className="size-10 pr-2 pb-4"
+            onClick={() => setIsDone(false)}
+          />
+        </p>
+        <p
+          className={
+            isAllFields
+              ? "flex text-center justify-between items-center bg-red-400 rounded-md -mt-4 py-3 px-8  w-4/5 font-semibold text-slate-900 opacity-100"
+              : "hidden"
+          }
+        >
+          All fields required!
+          <RxCross2 className="size-6" onClick={() => setIsAllFields(false)} />
+        </p>
         <div className="box-form-car-type space-y-2">
           <label className="flex gap-2 font-medium text-lg items-center">
             {" "}
@@ -94,7 +161,6 @@ function CarBook() {
             className="w-3/4 h-12 border-2 border-slate-100 rounded px-4 text-slate-500 cursor-pointer"
             onChange={handleCar}
           >
-            <option>Select Car</option>
             <option value="0">Audi A1 S-Line</option>
             <option value="1">VW Golf 6</option>
             <option value="2">Toyota Camry</option>
@@ -166,9 +232,7 @@ function CarBook() {
           ></input>
         </div>
         <button
-          onClick={() => {
-            setModal(true)
-          }}
+          onClick={search}
           type="submit"
           className="bg-orange w-3/4 mt-5 h-12 rounded-md text-lg text-white font-medium shadow-md shadow-orange"
         >
@@ -177,7 +241,8 @@ function CarBook() {
       </form>
 
       <div
-        className={`absolute z-10 ${
+        id="modal"
+        className={`fixed top-0 h-full !overflow-y-autoauto z-10 ${
           modal ? "active-modal" : "hidden"
         } w-[95%]  `}
       >
@@ -253,11 +318,25 @@ function CarBook() {
               <h4 className="text-orange font-bold text-lg">
                 PERSONAL INFORMATION
               </h4>
+              <p
+                className={
+                  isAllFields
+                    ? "flex text-center justify-between items-center bg-red-400 rounded-md mt-2 py-3 px-8  w-4/5 font-semibold text-slate-900 opacity-100"
+                    : "hidden"
+                }
+              >
+                All fields required!
+                <RxCross2
+                  className="size-6"
+                  onClick={() => setIsAllFields(false)}
+                />
+              </p>
               <form className="flex flex-col">
                 <label className="opacity-50 font-medium pb-1 pt-4">
                   First Name
                 </label>
                 <input
+                  onChange={handleName}
                   type="text"
                   placeholder="Enter your first name"
                   className="bg-stone-200 h-10 px-4"
@@ -267,8 +346,9 @@ function CarBook() {
                   Last Name
                 </label>
                 <input
+                  onChange={handleLastName}
                   type="text"
-                  placeholder="Enter your first name"
+                  placeholder="Enter your last name"
                   className="bg-stone-200 h-10 px-4"
                 ></input>
 
@@ -276,15 +356,17 @@ function CarBook() {
                   Phone Number
                 </label>
                 <input
-                  type="text"
-                  placeholder="Enter your first name"
+                  onChange={handlePhone}
+                  type="number"
+                  placeholder="Enter your phone number"
                   className="bg-stone-200 h-10 px-4"
                 ></input>
 
                 <label className="opacity-50 font-medium pb-1 pt-4">Age</label>
                 <input
+                  onChange={handleAge}
                   type="text"
-                  placeholder="Enter your first name"
+                  placeholder="Enter your age"
                   className="bg-stone-200 h-10 px-4"
                 ></input>
 
@@ -292,8 +374,9 @@ function CarBook() {
                   Email
                 </label>
                 <input
-                  type="text"
-                  placeholder="Enter your first name"
+                  onChange={handleEmail}
+                  type="email"
+                  placeholder="Enter your email"
                   className="bg-stone-200 h-10 px-4"
                 ></input>
 
@@ -301,15 +384,17 @@ function CarBook() {
                   Address
                 </label>
                 <input
+                  onChange={handleAddress}
                   type="text"
-                  placeholder="Enter your first name"
+                  placeholder="Enter your address"
                   className="bg-stone-200 h-10 px-4"
                 ></input>
 
                 <label className="opacity-50 font-medium pb-1 pt-4">City</label>
                 <input
+                  onChange={handleCity}
                   type="text"
-                  placeholder="Enter your first name"
+                  placeholder="Enter your city"
                   className="bg-stone-200 h-10 px-4"
                 ></input>
 
@@ -317,8 +402,9 @@ function CarBook() {
                   ZIP Code
                 </label>
                 <input
-                  type="text"
-                  placeholder="Enter your first name"
+                  onChange={handleZip}
+                  type="number"
+                  placeholder="Enter your ZIP code"
                   className="bg-stone-200 h-10 px-4"
                 ></input>
                 <label className="flex items-center gap-2 py-4">
@@ -330,7 +416,7 @@ function CarBook() {
                 <div className="flex justify-center items-center w-full rounded-xl py-5 bg-beige">
                   <button
                     className="bg-orange h-14 w-1/2 text-white rounded-xl shadow-md shadow-orangelight font-medium drop-shadow-sm"
-                    onClick={() => setModal(false)}
+                    onClick={confirmBooking}
                   >
                     RESERVE NOW
                   </button>
