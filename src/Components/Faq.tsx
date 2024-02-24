@@ -1,12 +1,8 @@
-import { SetStateAction, useState } from "react"
+import { useState } from "react"
 import { HiChevronDown } from "react-icons/hi2"
 
 function Faq() {
   const [isDown, setIsDown] = useState(0)
-
-  /*const openDown = (id: SetStateAction<string>) => {
-    setIsDown(isDown === id ? styleDownActive : id)
-  }*/
 
   let styleDown =
     "overflow-hidden px-4 max-h-0 opacity-70 transition-all duration-500 ease-out bg-white font-normal"
