@@ -16,6 +16,7 @@ function CarBook() {
   const [dropOff, setDropOff] = useState("")
   const [pickTime, setPickTime] = useState("")
   const [dropTime, setDropTime] = useState("")
+  //@ts-ignore
   const [carImg, setCarImg] = useState(0)
 
   const [name, setName] = useState("")
@@ -91,7 +92,7 @@ function CarBook() {
   const [isDone, setIsDone] = useState(false)
   const [isAllFields, setIsAllFields] = useState(false)
 
-  function search(e: any) {
+  function search() {
     if (pickUp == "" || dropOff == "" || pickTime == "" || dropTime == "") {
       setIsAllFields(true)
       return
