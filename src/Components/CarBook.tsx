@@ -125,7 +125,7 @@ function CarBook() {
   return (
     <div
       id="carbook"
-      className="bg-gray font-rubik flex justify-center max-h-[110dvh] shadow-sm"
+      className="bg-gray font-rubik flex justify-center min-h-[700px] max-h-[110dvh] shadow-sm"
     >
       <form className="bg-white w-11/12 rounded shadow-lg flex flex-col gap-3 pl-14 py-12">
         <h2 className="font-bold text-2xl pb-5">Book a car</h2>
@@ -310,10 +310,10 @@ function CarBook() {
             </div>
             <div className="font-semibold text-lg pt-5">
               Car -{" "}
-              <span className="text-orange">{cardata[carType][0].name}</span>
+              <span className="text-orange">{cardata[carType]?.name}</span>
             </div>
             <div className="border-b-2 border-black border-opacity-20">
-              <img src={cardata[carType][0].img} />
+              <img src={cardata[carType]?.img} />
             </div>
             <div className="w-[90%]">
               <h4 className="text-orange font-bold text-lg">
