@@ -2,12 +2,11 @@ import cars from "../assets/choose-us/main.png"
 import iconOne from "../assets/choose-us/icon1.png"
 import iconTwo from "../assets/choose-us/icon2.png"
 import iconThree from "../assets/choose-us/icon3.png"
-import bg from "../assets/choose-us/bg.png"
 import { MdNavigateNext } from "react-icons/md"
 
 function ChooseUs() {
   return (
-    <div className="py-24 font-rubik">
+    <div className="pt-24 font-rubik">
       <div className="">
         <img src={cars} />
       </div>

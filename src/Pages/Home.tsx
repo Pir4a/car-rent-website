@@ -4,6 +4,7 @@ import CarModels from "../Components/CarModels"
 import ChooseUs from "../Components/ChooseUs"
 import Hero from "../Components/Hero"
 import Plan from "../Components/Plan"
+import Testimonials from "../Components/Testimonials"
 
 function Home() {
   return (
@@ -14,6 +15,7 @@ function Home() {
       <CarModels />
       <Banner />
       <ChooseUs />
+      <Testimonials />
     </>
   )
 }
