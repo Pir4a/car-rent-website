@@ -1,3 +1,4 @@
+import Banner from "../Components/Banner"
 import CarBook from "../Components/CarBook"
 import CarModels from "../Components/CarModels"
 import Hero from "../Components/Hero"
@@ -10,6 +11,7 @@ function Home() {
       <CarBook />
       <Plan />
       <CarModels />
+      <Banner />
     </>
   )
 }

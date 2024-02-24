@@ -4,6 +4,12 @@ export default {
   theme: {
     extend: {
       fontSize: {
+        medium: [
+          "2.7rem",
+          {
+            lineHeight: "3.7rem",
+          },
+        ],
         large: [
           "3.4rem",
           {
