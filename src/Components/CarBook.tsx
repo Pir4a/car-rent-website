@@ -103,6 +103,7 @@ function CarBook() {
   }
 
   function confirmBooking(e: any) {
+    e.preventDefault()
     if (
       name == "" ||
       lastName == "" ||
@@ -128,7 +129,7 @@ function CarBook() {
       id="carbook"
       className="bg-gray font-rubik flex justify-center min-h-[700px] lg:min-h-0 max-h-[110dvh] shadow-sm"
     >
-      <form className="bg-white w-11/12 rounded shadow-lg flex flex-col gap-3 pl-14 py-12 lg:grid lg:grid-cols-3 lg:grid-rows-2 lg:pt-24 lg:relative lg:w-2/3 lg:mb-8">
+      <form className="bg-white w-11/12 rounded shadow-lg flex flex-col gap-3 pl-14 py-12 lg:grid lg:grid-cols-3 lg:grid-rows-2 lg:pt-24 lg:relative lg:w-[97%] xl:w-2/3 lg:mb-8">
         <h2 className="font-bold text-2xl pb-5 lg:absolute lg:top-8 lg:left-14">
           Book a car
         </h2>
@@ -148,7 +149,7 @@ function CarBook() {
         <p
           className={
             isAllFields
-              ? "flex text-center justify-between items-center bg-red-400 rounded-md -mt-4 py-3 px-8  w-4/5 font-semibold text-slate-900 opacity-100"
+              ? "flex text-center justify-between items-center bg-red-400 rounded-md -mt-4 py-3 px-8  w-4/5 font-semibold text-slate-900 opacity-100 lg:max-h-12 lg:mt-6 lg:mt-6"
               : "hidden"
           }
         >
@@ -252,9 +253,9 @@ function CarBook() {
       ></div>
       <div
         id="modal"
-        className={`fixed top-0 h-full !overflow-y-autoauto z-10 ${
+        className={`fixed top-0 h-full !overflow-y-autoauto z-20 ${
           modal ? "active-modal" : "hidden"
-        } w-[95%] lg:w-1/2 lg:h-4/5 my-20`}
+        } w-[95%] xl:w-[60%] 2xl:w-[40%] lg:h-4/5 lg:my-20`}
       >
         <div className="flex items-center justify-between px-4 bg-orange text-white h-14 w-full rounded-t-md">
           <h1 className="text-2xl font-semibold">COMPLETE RESERVATION</h1>
@@ -265,121 +266,143 @@ function CarBook() {
             }}
           />
         </div>
-        <div className="w-full flex gap-6 flex-col p-8 h-52 bg-beige">
-          <h2 className="text-orange flex gap-2 text-lg font-semibold">
-            <HiInformationCircle className="size-12 pb-5" /> Upon completing
-            this reservation enquiry, you will receive:{" "}
+        <div className="w-full flex gap-6 flex-col p-8 h-52 bg-beige lg:h-40 lg:gap-0">
+          <h2 className="text-orange flex gap-2 text-lg font-semibold lg:text-xl lg:gap-0">
+            <HiInformationCircle className="size-12 pb-5 lg:size-14 lg:pb-7" />{" "}
+            Upon completing this reservation enquiry, you will receive:{" "}
           </h2>
-          <p className="opacity-60 font-medium ">
+          <p className="opacity-60 font-medium lg:font-normal lg:text-lg lg:px-8 ">
             Your rental voucher to produce on arrival at the rental desk and a
             toll-free customer support number.
           </p>
         </div>
-        <div className="w-full flex justify-center items-center bg-white">
-          <div className="flex flex-col  items-center gap-5 py-6">
-            <h2 className="text-lg font-semibold text-orange">
-              Location & Date
-            </h2>
-            <div className="flex items-center flex-col">
-              <h3 className="flex gap-2 font-medium text-lg items-center">
-                {" "}
-                <HiMapPin />
-                Pick-up Location
-              </h3>
-              <span className="font-medium opacity-70">{pickUp}</span>
+        <div className="w-full flex flex-col justify-center items-center bg-white lg:items-start lg:justify-start">
+          <div
+            className="flex flex-col  items-center gap-5 py-6 lg:grid lg:grid-cols-2 lg:grid-rows-1 lg:place-items-stretch lg:pl-0 lg:border-b-2
+          lg:border-slate-200"
+          >
+            <div className="flex flex-col  items-center gap-5 py-6 lg:py-4 lg:items-start lg:px-8">
+              <h2 className="text-lg font-semibold text-orange lg:text-xl">
+                Location & Date
+              </h2>
+              <div className="flex items-center flex-col">
+                <h3 className="flex gap-2 font-medium text-lg items-center lg:min-w-56 px-">
+                  {" "}
+                  <HiMapPin />
+                  Pick-up Location
+                </h3>
+                <span className="font-medium opacity-70 xl:min-w-56">
+                  {pickUp}
+                </span>
+              </div>
+              <div className="flex items-center flex-col">
+                <h3 className="flex gap-2 font-medium text-lg items-center xl:min-w-56">
+                  {" "}
+                  <HiMapPin />
+                  Drop-off Location
+                </h3>
+                <span className="font-medium opacity-70 xl:min-w-56">
+                  {dropOff}
+                </span>
+              </div>
+              <div className="flex items-center flex-col">
+                <h3 className="flex gap-2 font-medium text-lg items-center xl:min-w-56">
+                  {" "}
+                  <HiMapPin />
+                  Pick-up Date & Time
+                </h3>
+                <span className="font-medium opacity-70 pt-1 xl:min-w-56">
+                  {pickTime} <input type="time" className="pl-5"></input>
+                </span>
+              </div>
+              <div className="flex items-center flex-col">
+                <h3 className="flex gap-2 font-medium text-lg items-center xl:min-w-56">
+                  {" "}
+                  <HiMapPin />
+                  Drop-off Date & Time
+                </h3>
+                <span className="font-medium opacity-70 pt-1 xl:min-w-56">
+                  {dropTime}
+                  <input type="time" className="pl-5"></input>
+                </span>
+              </div>
             </div>
-            <div className="flex items-center flex-col">
-              <h3 className="flex gap-2 font-medium text-lg items-center">
-                {" "}
-                <HiMapPin />
-                Drop-off Location
-              </h3>
-              <span className="font-medium opacity-70">{dropOff}</span>
-            </div>
-            <div className="flex items-center flex-col">
-              <h3 className="flex gap-2 font-medium text-lg items-center">
-                {" "}
-                <HiMapPin />
-                Pick-up Date & Time
-              </h3>
-              <span className="font-medium opacity-70 pt-1">
-                {pickTime} <input type="time" className="pl-5"></input>
+            <div className="font-semibold text-lg pt-5 pb-2 flex flex-col item-center justify-center border-b-2 border-black border-opacity-20 lg:border-b-0">
+              <span className="mx-auto">
+                Car -{" "}
+                <span className="text-orange">{cardata[carType]?.name}</span>
               </span>
-            </div>
-            <div className="flex items-center flex-col">
-              <h3 className="flex gap-2 font-medium text-lg items-center">
-                {" "}
-                <HiMapPin />
-                Drop-off Date & Time
-              </h3>
-              <span className="font-medium opacity-70 pt-1">
-                {dropTime}
-                <input type="time" className="pl-5"></input>
-              </span>
-            </div>
-            <div className="font-semibold text-lg pt-5">
-              Car -{" "}
-              <span className="text-orange">{cardata[carType]?.name}</span>
-            </div>
-            <div className="border-b-2 border-black border-opacity-20">
+
               <img src={cardata[carType]?.img} />
             </div>
-            <div className="w-[90%]">
+          </div>
+          <div className="w-[90%] lg:w-full lg:flex lg:flex-col lg:justify-center lg:items-center">
+            <div className="lg:flex lg:w-full lg:px-8 lg:pt-8">
               <h4 className="text-orange font-bold text-lg">
                 PERSONAL INFORMATION
               </h4>
-              <p
-                className={
-                  isAllFields
-                    ? "flex text-center justify-between items-center bg-red-400 rounded-md mt-2 py-3 px-8  w-4/5 font-semibold text-slate-900 opacity-100"
-                    : "hidden"
-                }
-              >
-                All fields required!
-                <RxCross2
-                  className="size-6"
-                  onClick={() => setIsAllFields(false)}
-                />
-              </p>
-              <form className="flex flex-col">
-                <label className="opacity-50 font-medium pb-1 pt-4">
-                  First Name
-                </label>
-                <input
-                  onChange={handleName}
-                  type="text"
-                  placeholder="Enter your first name"
-                  className="bg-stone-200 h-10 px-4"
-                ></input>
-
-                <label className="opacity-50 font-medium pb-1 pt-4">
-                  Last Name
-                </label>
-                <input
-                  onChange={handleLastName}
-                  type="text"
-                  placeholder="Enter your last name"
-                  className="bg-stone-200 h-10 px-4"
-                ></input>
-
-                <label className="opacity-50 font-medium pb-1 pt-4">
-                  Phone Number
-                </label>
-                <input
-                  onChange={handlePhone}
-                  type="number"
-                  placeholder="Enter your phone number"
-                  className="bg-stone-200 h-10 px-4"
-                ></input>
-
-                <label className="opacity-50 font-medium pb-1 pt-4">Age</label>
-                <input
-                  onChange={handleAge}
-                  type="text"
-                  placeholder="Enter your age"
-                  className="bg-stone-200 h-10 px-4"
-                ></input>
-
+            </div>
+            <p
+              className={
+                isAllFields
+                  ? "flex text-center justify-between items-center bg-red-400 rounded-md mt-2 py-3 px-8  w-4/5 font-semibold text-slate-900 opacity-100 lg:max-h-12"
+                  : "hidden"
+              }
+            >
+              All fields required!
+              <RxCross2
+                className="size-6"
+                onClick={() => setIsAllFields(false)}
+              />
+            </p>
+            <form className="flex flex-col lg:w-full">
+              <div className="flex flex-col lg:grid lg:grid-cols-2 lg:grid-rows-2 lg:place-items-stretch lg:gap-x-8 lg:px-8">
+                <div className="flex flex-col">
+                  <label className="opacity-50 font-medium pb-1 pt-4">
+                    First Name
+                  </label>
+                  <input
+                    onChange={handleName}
+                    type="text"
+                    placeholder="Enter your first name"
+                    className="bg-stone-200 h-10 px-4"
+                  ></input>
+                </div>
+                <div className="flex flex-col">
+                  <label className="opacity-50 font-medium pb-1 pt-4">
+                    Last Name
+                  </label>
+                  <input
+                    onChange={handleLastName}
+                    type="text"
+                    placeholder="Enter your last name"
+                    className="bg-stone-200 h-10 px-4"
+                  ></input>
+                </div>
+                <div className="flex flex-col">
+                  <label className="opacity-50 font-medium pb-1 pt-4">
+                    Phone Number
+                  </label>
+                  <input
+                    onChange={handlePhone}
+                    type="number"
+                    placeholder="Enter your phone number"
+                    className="bg-stone-200 h-10 px-4"
+                  ></input>
+                </div>
+                <div className="flex flex-col">
+                  <label className="opacity-50 font-medium pb-1 pt-4">
+                    Age
+                  </label>
+                  <input
+                    onChange={handleAge}
+                    type="text"
+                    placeholder="Enter your age"
+                    className="bg-stone-200 h-10 px-4"
+                  ></input>
+                </div>
+              </div>
+              <div className="flex flex-col lg:px-8">
                 <label className="opacity-50 font-medium pb-1 pt-4">
                   Email
                 </label>
@@ -389,7 +412,8 @@ function CarBook() {
                   placeholder="Enter your email"
                   className="bg-stone-200 h-10 px-4"
                 ></input>
-
+              </div>
+              <div className="flex flex-col lg:px-8">
                 <label className="opacity-50 font-medium pb-1 pt-4">
                   Address
                 </label>
@@ -399,40 +423,46 @@ function CarBook() {
                   placeholder="Enter your address"
                   className="bg-stone-200 h-10 px-4"
                 ></input>
-
-                <label className="opacity-50 font-medium pb-1 pt-4">City</label>
-                <input
-                  onChange={handleCity}
-                  type="text"
-                  placeholder="Enter your city"
-                  className="bg-stone-200 h-10 px-4"
-                ></input>
-
-                <label className="opacity-50 font-medium pb-1 pt-4">
-                  ZIP Code
-                </label>
-                <input
-                  onChange={handleZip}
-                  type="number"
-                  placeholder="Enter your ZIP code"
-                  className="bg-stone-200 h-10 px-4"
-                ></input>
-                <label className="flex items-center gap-2 py-4">
-                  <input type="checkbox" className="size-4" />
-                  <p className="opacity-60 font-medium">
-                    Please send me latest news and updates
-                  </p>
-                </label>
-                <div className="flex justify-center items-center w-full rounded-xl py-5 bg-beige">
-                  <button
-                    className="bg-orange h-14 w-1/2 text-white rounded-xl shadow-md shadow-orangelight font-medium drop-shadow-sm"
-                    onClick={confirmBooking}
-                  >
-                    RESERVE NOW
-                  </button>
+              </div>
+              <div className="flex flex-col lg:grid lg:grid-cols-2 lg:grid-rows-1 lg:place-content-stretch lg:gap-8 lg:px-8">
+                <div className="flex flex-col">
+                  <label className="opacity-50 font-medium pb-1 pt-4">
+                    City
+                  </label>
+                  <input
+                    onChange={handleCity}
+                    type="text"
+                    placeholder="Enter your city"
+                    className="bg-stone-200 h-10 px-4"
+                  ></input>
                 </div>
-              </form>
-            </div>
+                <div className="flex flex-col">
+                  <label className="opacity-50 font-medium pb-1 pt-4">
+                    ZIP Code
+                  </label>
+                  <input
+                    onChange={handleZip}
+                    type="number"
+                    placeholder="Enter your ZIP code"
+                    className="bg-stone-200 h-10 px-4"
+                  ></input>
+                </div>
+              </div>
+              <label className="flex items-center gap-2 py-4">
+                <input type="checkbox" className="size-4 lg:ml-8" />
+                <p className="opacity-60 font-medium">
+                  Please send me latest news and updates
+                </p>
+              </label>
+              <div className="flex justify-center items-center w-full rounded-xl py-5 bg-beige">
+                <button
+                  className="bg-orange h-14 w-1/2 text-white rounded-xl shadow-md shadow-orangelight font-medium drop-shadow-sm"
+                  onClick={confirmBooking}
+                >
+                  RESERVE NOW
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       </div>

@@ -34,7 +34,7 @@ function Hero() {
           src={herobg}
           className="hidden lg:block absolute right-0 max-w-[50%] min-h-[90dvh]"
         />
-        <div className="2xl:w-1/4 xl:w-2/4 max-h-[500px] z-20 lg:pl-8 lg:pt-16">
+        <div className="2xl:w-1/4 xl:w-2/4 max-h-[500px] z-10 lg:pl-8 lg:pt-16">
           <div className="hero-text flex flex-col justify-center gap-4 items-center text-center px-4 py-12 lg:text-left lg:p-0">
             <h4 className="font-bold text-2xl w-full">Plan your trip now</h4>
             <h1 className="font-bold text-large">
@@ -60,7 +60,7 @@ function Hero() {
         </div>
         <img
           src={maincar}
-          className="hidden lg:block lg:max-w-[40%] py-12 z-20"
+          className="hidden lg:block lg:max-w-[40%] py-12 z-10"
         />
       </div>
       <div
