@@ -1,7 +1,30 @@
+import { useEffect, useState } from "react"
 import { FaCar } from "react-icons/fa6"
 import { MdNavigateNext } from "react-icons/md"
+import { FaCircleArrowUp } from "react-icons/fa6"
 
 function Hero() {
+  const [goUp, setGoUp] = useState(false)
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" })
+  }
+
+  useEffect(() => {
+    const onPageScroll = () => {
+      if (window.scrollY > 600) {
+        setGoUp(true)
+      } else {
+        setGoUp(false)
+      }
+    }
+    window.addEventListener("scroll", onPageScroll)
+
+    return () => {
+      window.removeEventListener("scroll", onPageScroll)
+    }
+  }, [])
+
   return (
     <>
       <div className="hero font-rubik bg-gray pb-36">
@@ -27,6 +50,12 @@ function Hero() {
             Learn More <MdNavigateNext className="size-6" />
           </a>
         </div>
+      </div>
+      <div
+        onClick={scrollToTop}
+        className={`fixed bottom-8 right-8 ${goUp ? "block" : "hidden"}`}
+      >
+        <FaCircleArrowUp className="text-orange size-12" />
       </div>
     </>
   )
