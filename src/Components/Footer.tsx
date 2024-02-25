@@ -15,7 +15,7 @@ function Footer() {
           </p>
           <h4 className="flex gap-3 items-center font-semibold pt-4 focus:text-orange cursor-pointer hover:text-orange">
             <FaPhone className="size-6 mt-[2px]" />
-            (124)-456-789
+            (123)-456-789
           </h4>
           <h4 className="flex gap-3 items-center font-semibold pt-4 focus:text-orange cursor-pointer hover:text-orange">
             <a

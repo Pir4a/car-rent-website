@@ -27,7 +27,7 @@ function Hero() {
 
   return (
     <>
-      <div className="hero font-rubik bg-gray pb-36">
+      <div className="hero font-rubik bg-gray pt-28 pb-36">
         <div className="hero-text flex flex-col justify-center gap-4 items-center text-center px-4 py-12">
           <h4 className="font-bold text-2xl">Plan your trip now</h4>
           <h1 className="font-bold text-large">

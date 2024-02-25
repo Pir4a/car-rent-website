@@ -2,6 +2,7 @@ import { useState } from "react"
 import logo from "../assets/logo/logo.0ad964cb93ab30cc809d.png"
 import { RxHamburgerMenu } from "react-icons/rx"
 import { IoCloseOutline } from "react-icons/io5"
+import { Link } from "react-router-dom"
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -11,7 +12,7 @@ function Navbar() {
   }
 
   return (
-    <nav className="bg-gray flex justify-between items-center h-28 px-5">
+    <nav className="bg-transparent absolute top-0 left-0 right-0 flex justify-between items-center h-28 px-5 z-50">
       <img src={logo} className="w-[9rem]" />
       <RxHamburgerMenu
         className={menuOpen ? "size-8 text-orange" : "size-8"}
@@ -29,12 +30,24 @@ function Navbar() {
           onClick={openMenu}
         />
         <ul className="text-2xl font-semibold text-center space-y-8">
-          <li>Home</li>
-          <li>About</li>
-          <li>Models</li>
-          <li>Testimonials</li>
-          <li>Our team</li>
-          <li>Contact</li>
+          <li onClick={openMenu}>
+            <Link to="/">Home</Link>
+          </li>
+          <li onClick={openMenu}>
+            <Link to="/about">About</Link>
+          </li>
+          <li onClick={openMenu}>
+            <Link to="/models">Models</Link>
+          </li>
+          <li onClick={openMenu}>
+            <Link to="/testimonials">Testimonials</Link>
+          </li>
+          <li onClick={openMenu}>
+            <Link to="/team">Our team</Link>
+          </li>
+          <li onClick={openMenu}>
+            <Link to="/contact">Contact</Link>
+          </li>
         </ul>
       </div>
     </nav>
