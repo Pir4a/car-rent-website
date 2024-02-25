@@ -92,7 +92,8 @@ function CarBook() {
   const [isDone, setIsDone] = useState(false)
   const [isAllFields, setIsAllFields] = useState(false)
 
-  function search() {
+  function search(e: any) {
+    e.preventDefault()
     if (pickUp == "" || dropOff == "" || pickTime == "" || dropTime == "") {
       setIsAllFields(true)
       return
@@ -125,10 +126,12 @@ function CarBook() {
   return (
     <div
       id="carbook"
-      className="bg-gray font-rubik flex justify-center min-h-[700px] max-h-[110dvh] shadow-sm"
+      className="bg-gray font-rubik flex justify-center min-h-[700px] lg:min-h-0 max-h-[110dvh] shadow-sm"
     >
-      <form className="bg-white w-11/12 rounded shadow-lg flex flex-col gap-3 pl-14 py-12">
-        <h2 className="font-bold text-2xl pb-5">Book a car</h2>
+      <form className="bg-white w-11/12 rounded shadow-lg flex flex-col gap-3 pl-14 py-12 lg:grid lg:grid-cols-3 lg:grid-rows-2 lg:pt-24 lg:relative lg:w-2/3 lg:mb-8">
+        <h2 className="font-bold text-2xl pb-5 lg:absolute lg:top-8 lg:left-14">
+          Book a car
+        </h2>
         <p
           className={
             isDone
@@ -240,17 +243,23 @@ function CarBook() {
           Search
         </button>
       </form>
-
+      <div
+        className={
+          modal
+            ? "hidden lg:block fixed top-0 left-0 right-0 bottom-0 opacity-20 bg-black"
+            : "hidden"
+        }
+      ></div>
       <div
         id="modal"
         className={`fixed top-0 h-full !overflow-y-autoauto z-10 ${
           modal ? "active-modal" : "hidden"
-        } w-[95%]  `}
+        } w-[95%] lg:w-1/2 lg:h-4/5 my-20`}
       >
         <div className="flex items-center justify-between px-4 bg-orange text-white h-14 w-full rounded-t-md">
           <h1 className="text-2xl font-semibold">COMPLETE RESERVATION</h1>
           <RxCross2
-            className="size-7  z-10"
+            className="size-7 cursor-pointer z-50"
             onClick={() => {
               setModal(false)
             }}
