@@ -5,9 +5,9 @@ function Faq() {
   const [isDown, setIsDown] = useState(0)
 
   let styleDown =
-    "overflow-hidden px-4 max-h-0 opacity-70 transition-all duration-500 ease-out bg-white font-normal"
+    "overflow-hidden px-4 max-h-0 opacity-70 transition-all duration-500 ease-in-out bg-white font-normal"
   let styleDownActive =
-    "overflow-hidden px-4 py-4 max-h-96 opacity-70 transition-all duration-500 ease-out bg-white font-normal"
+    "overflow-hidden px-4 py-4 max-h-96 opacity-70 transition-all duration-500 ease-in-out bg-white font-normal"
 
   return (
     <div className="py-24 font-rubik">
