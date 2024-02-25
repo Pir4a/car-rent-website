@@ -149,7 +149,7 @@ function CarBook() {
         <p
           className={
             isAllFields
-              ? "flex text-center justify-between items-center bg-red-400 rounded-md -mt-4 py-3 px-8  w-4/5 font-semibold text-slate-900 opacity-100 lg:max-h-12 lg:mt-6 lg:mt-6"
+              ? "flex text-center justify-between items-center bg-red-400 rounded-md -mt-4 py-3 px-8  w-4/5 font-semibold text-slate-900 opacity-100 lg:max-h-12 lg:mt-6"
               : "hidden"
           }
         >
