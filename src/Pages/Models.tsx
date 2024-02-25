@@ -38,7 +38,7 @@ function Models() {
                       <p className="py-1">per day</p>
                     </div>
                   </div>{" "}
-                  <div className="px-4 pt-2 grid grid-cols-2 grid-rows-2 content-between gap-2">
+                  <div className="px-4 pt-4 grid grid-cols-2 grid-rows-2 content-between gap-2">
                     <span className="flex items-center gap-4">
                       <IoCarSportOutline />
                       {cardata.mark}
