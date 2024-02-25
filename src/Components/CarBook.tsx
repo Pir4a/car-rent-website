@@ -257,7 +257,7 @@ function CarBook() {
           modal ? "active-modal" : "hidden"
         } w-[95%] xl:w-[60%] 2xl:w-[40%] lg:h-4/5 lg:my-20`}
       >
-        <div className="flex items-center justify-between px-4 bg-orange text-white h-14 w-full rounded-t-md">
+        <div className="flex items-center justify-between px-4 bg-orange text-white min-h-14 w-full rounded-t-md">
           <h1 className="text-2xl font-semibold">COMPLETE RESERVATION</h1>
           <RxCross2
             className="size-7 cursor-pointer z-50"
@@ -266,7 +266,7 @@ function CarBook() {
             }}
           />
         </div>
-        <div className="w-full flex gap-6 flex-col p-8 h-52 bg-beige lg:h-40 lg:gap-0">
+        <div className="w-full flex gap-6 flex-col p-8  bg-beige lg:h-40 lg:gap-0">
           <h2 className="text-orange flex gap-2 text-lg font-semibold lg:text-xl lg:gap-0">
             <HiInformationCircle className="size-12 pb-5 lg:size-14 lg:pb-7" />{" "}
             Upon completing this reservation enquiry, you will receive:{" "}
