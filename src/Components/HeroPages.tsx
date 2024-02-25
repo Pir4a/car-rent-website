@@ -5,7 +5,7 @@ function HeroPages({ name }: any) {
     <>
       <div className="relative font-rubik">
         <div className="min-h-96 bg-[url('/src/assets/hero/heroes-bg.png')] bg-center opacity-10 flex items-center "></div>{" "}
-        <h4 className="absolute flex flex-col top-[45%] left-8 w-12 h-12 text-black font-bold text-4xl">
+        <h4 className="absolute w-72 flex flex-col top-[45%] left-8 h-12 text-black font-bold text-4xl">
           {name}
 
           <div className="flex w-72 mt-2 text-2xl">
