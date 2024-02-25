@@ -100,13 +100,13 @@ function CarModels() {
         </button>
       </div>
       <div className="py-12 flex flex-col items-center justify-center ">
-        <div className="h-12 w-3/5 flex gap-1 justify-center items-center bg-orangelight text-white text-lg">
+        <div className="h-12 w-4/5 flex gap-1 justify-center items-center bg-orangelight text-white text-lg">
           <span className="font-semibold text-2xl">
             ${CARDATA[imageIndex].price}{" "}
           </span>{" "}
           / rent per day
         </div>
-        <div className="w-3/5">
+        <div className="w-4/5">
           <div className="flex justify-between px-4 py-2 border-slate-400 border-2 border-t-0">
             <span className="border-r-2 pr-6 border-slate-400 w-1/2">
               Model

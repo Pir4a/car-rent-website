@@ -28,7 +28,7 @@ function Footer() {
             </a>
           </h4>
         </div>
-        <div className="flex flex-col items-center gap-4 text-center pt-16">
+        <div className="flex flex-col items-center gap-4 text-center pt-8">
           <h4 className="text-2xl font-bold tracking-wide">COMPANY</h4>
           <ul className="space-y-2 font-medium text-lg">
             <li>Paris</li>
@@ -38,7 +38,7 @@ function Footer() {
             <li>How we work</li>
           </ul>
         </div>
-        <div className="flex flex-col gap-4 items-center pt-16">
+        <div className="flex flex-col gap-4 items-center pt-8 pb-4">
           <h4 className="text-2xl font-bold tracking-wide">WORKING HOURS</h4>
           <ul className="text-center space-y-2 font-medium">
             <li>Monday - Friday 9:00AM - 6:00PM</li>
@@ -46,7 +46,7 @@ function Footer() {
             <li>Sunday: CLOSED</li>
           </ul>
         </div>
-        <div className="flex flex-col gap-4 items-center px-8 pt-16">
+        <div className="flex flex-col gap-4 items-center px-8 pt-4 border-t-2 border-slate-200">
           <h4 className="text-2xl font-bold tracking-wide">SUBSCRIPTION</h4>
           <p className="text-center">
             Enter your email address to subscribe for latest news & updates!

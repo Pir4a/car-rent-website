@@ -92,8 +92,7 @@ function Faq() {
             websites like Kayak, Expedia, or Travelocity to compare prices from
             multiple rental car companies. Look for discount codes and coupons:
             Search for discount codes and coupons that you can use to lower the
-            rental price. Renting from an off-airport location can sometimes
-            result in lower prices.
+            rental price.
           </p>
         </div>
       </div>
