@@ -14,14 +14,14 @@ function Faq() {
       <div className="flex flex-col gap-4 text-center pb-12">
         <h1 className="text-6xl font-semibold text-orangelight">F.A.Q</h1>
         <h2 className="text-4xl font-medium">Frequently Asked Questions</h2>
-        <p className="opacity-70 pt-4 px-4">
+        <p className="opacity-70 pt-4 px-4 lg:w-2/5 lg:mx-auto">
           Frequently Asked Questions About the Car Rental Booking Process on Our
           Website: Answers to Common Concerns and Inquiries.
         </p>
       </div>
-      <div className="flex flex-col w-10/12 shadow-lg mx-auto divide-y-2 divide-slate-100 border-2 border-slate-100">
+      <div className="flex flex-col w-10/12 shadow-lg mx-auto divide-y-2 divide-slate-100 border-2 border-slate-100 lg:w-2/4">
         <div
-          className=" font-medium pb-4 text-lg relative"
+          className=" font-medium text-lg relative"
           onClick={() => {
             isDown == 1 ? setIsDown(0) : setIsDown(1)
           }}
@@ -30,12 +30,12 @@ function Faq() {
             className={
               isDown == 1
                 ? "bg-orange px-4 font-medium pt-6 pb-4 text-lg relative shadow-lg shadow-orange transition-all duration-300 ease-in-out"
-                : "px-4 font-medium pt-6  text-lg relative transition-all duration-300 ease-in-out"
+                : "px-4 font-medium pt-6 pb-4 text-lg relative transition-all duration-300 ease-in-out"
             }
           >
             1. What is special about comparing rental car deals?
           </p>
-          <HiChevronDown className="absolute right-1 top-[20%]" />
+          <HiChevronDown className="absolute right-1 top-[20%] lg:top-[40%]" />
           <p className={isDown == 1 ? styleDownActive : styleDown}>
             Comparing rental car deals is important as it helps find the best
             deal that fits your budget and requirements, ensuring you get the
