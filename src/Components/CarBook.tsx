@@ -149,12 +149,15 @@ function CarBook() {
         <p
           className={
             isAllFields
-              ? "flex text-center justify-between items-center bg-red-400 rounded-md -mt-4 py-3 px-8  w-4/5 font-semibold text-slate-900 opacity-100 lg:max-h-12 lg:mt-6"
+              ? "flex text-center lg:w-1/3 lg:absolute lg:top-1 lg:left-[33%] justify-between items-center bg-red-400 rounded-md -mt-4 py-3 px-8  w-4/5 font-semibold text-slate-900 opacity-100 lg:max-h-12 lg:mt-6"
               : "hidden"
           }
         >
           All fields required!
-          <RxCross2 className="size-6" onClick={() => setIsAllFields(false)} />
+          <RxCross2
+            className="size-6  cursor-pointer"
+            onClick={() => setIsAllFields(false)}
+          />
         </p>
         <div className="box-form-car-type space-y-2">
           <label className="flex gap-2 font-medium text-lg items-center">
@@ -351,7 +354,7 @@ function CarBook() {
             >
               All fields required!
               <RxCross2
-                className="size-6"
+                className="size-6 cursor-pointer"
                 onClick={() => setIsAllFields(false)}
               />
             </p>
