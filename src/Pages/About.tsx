@@ -10,13 +10,18 @@ function About() {
   return (
     <>
       <HeroPages name={"About"} />
-      <div className="py-24 flex flex-col items-center font-rubik">
+      <div className="py-24 flex flex-col items-center font-rubik lg:flex-row lg:w-full lg:justify-center lg:gap-8 lg:pb-8 lg:pt-6 ">
         <img
           src={client}
           className="w-11/12 shadow-lg border-slate-200 border-2 max-h-96 max-w-96"
         />
-        <div className="flex flex-col text-center items-center mt-16 gap-6 border-2 border-slate-100 py-4 shadow-md w-[98%]">
-          <h4 className="text-2xl font-medium px-12">About Our Company</h4>
+        <div
+          className="flex flex-col text-center items-center mt-16 gap-6 
+        border-2 border-slate-100 py-4 shadow-md w-[98%] lg:w-1/3 lg:h-[500px]"
+        >
+          <h4 className="text-2xl lg:text-3xl font-medium px-12">
+            About Our Company
+          </h4>
           <h2 className="text-4xl font-semibold px-8">
             You start the engine and your adventure begins
           </h2>
@@ -26,7 +31,7 @@ function About() {
             trust us for hassle-free transportation. Let us take you there, with
             ease and comfort.
           </p>
-          <div className="flex flex-col gap-8 py-8">
+          <div className="flex flex-col gap-8 py-8 lg:flex-row lg:gap-16 lg:items-center">
             <div className="flex flex-col items-center">
               <img src={iconone} />
               <span className="font-bold text-3xl">20</span>
@@ -45,6 +50,7 @@ function About() {
           </div>
         </div>
       </div>
+      <div className="hidden lg:block h-[1px] w-full bg-slate-200 mt-4"></div>
       <Plan />
       <GetInTouch />
     </>

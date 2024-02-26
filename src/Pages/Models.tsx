@@ -12,15 +12,21 @@ function Models() {
   return (
     <>
       <HeroPages name={"Vehicle Models"} />
-      <div className="flex flex-col pt-8 gap-12 items-center font-rubik">
+      <div
+        className="flex flex-col pt-8 gap-12 lg:gap-8 items-center font-rubik lg:grid lg:grid-cols-3 lg:grid-rows-2
+      xl:w-3/4 lg:place-items-center lg:mx-auto md:bg-none lg:py-12"
+      >
         {cardata.map((cardata) => {
           return (
             <div
-              className="flex w-10/12 flex-col items-center border-2 border-slate-200 shadow-md"
+              className="flex w-10/12 flex-col items-center border-2 border-slate-200 shadow-md lg:min-h-[500px] xl:min-h-[600px] "
               key={cardata.name}
             >
               <div className="w-full flex flex-col">
-                <img src={cardata.imgbox} className="w-full object-fill" />
+                <img
+                  src={cardata.imgbox}
+                  className="w-full object-fill xl:min-h-[280px] lg:min-h-[200px] lg:object-cover "
+                />
                 <div className="py-4 pt-8">
                   <div className="flex justify-between px-4">
                     <div className="py-2">

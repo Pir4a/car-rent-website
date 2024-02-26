@@ -4,7 +4,7 @@ import cardrive from "../assets/plan/icon3.png"
 
 function Plan() {
   return (
-    <div className="font-rubik pt-28 flex flex-col text-center items-center lg:w-2/3 lg:mx-auto lg:gap-y-12 lg:py-20 lg:pb-0 lg:justify-center">
+    <div className="font-rubik pt-28 flex flex-col text-center items-center lg:w-2/3 lg:mx-auto lg:gap-y-12 lg:py-12 lg:pb-0 lg:justify-center">
       <div className="flex flex-col gap-4 lg:pt-12">
         <h4 className="font-medium text-2xl">Plan your trip now</h4>
         <h2 className="font-semibold text-5xl px-4">Quick & easy car rental</h2>

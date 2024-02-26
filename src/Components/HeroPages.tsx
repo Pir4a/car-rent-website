@@ -10,7 +10,7 @@ function HeroPages({ name }: any) {
 
           <div className="flex w-72 mt-2 text-2xl">
             <h3 className="flex w-full gap-2">
-              <Link to="./">Home</Link> / {name}
+              <Link to="/">Home</Link> / {name}
             </h3>
           </div>
         </h4>
