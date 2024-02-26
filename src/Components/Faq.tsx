@@ -29,8 +29,8 @@ function Faq() {
           <p
             className={
               isDown == 1
-                ? "bg-orange px-4 font-medium pt-6 pb-4 text-lg relative shadow-lg shadow-orange transition-all duration-300 ease-in-out"
-                : "px-4 font-medium pt-6 pb-4 text-lg relative transition-all duration-300 ease-in-out"
+                ? "bg-orange px-4 font-medium pt-6 pb-4 text-lg relative shadow-lg shadow-orange cursor-pointer transition-all duration-300 ease-in-out"
+                : "px-4 font-medium pt-6 pb-4 text-lg relative transition-all duration-300 ease-in-out cursor-pointer"
             }
           >
             1. What is special about comparing rental car deals?
@@ -54,8 +54,8 @@ function Faq() {
           <p
             className={
               isDown == 2
-                ? "bg-orange px-4 font-medium pt-6 pb-4 text-lg relative shadow-lg shadow-orange transition-all duration-300 ease-in-out"
-                : "px-4 font-medium pb-4 pt-6  text-lg relative transition-all duration-300 ease-in-out"
+                ? "bg-orange px-4 font-medium pt-6 pb-4 text-lg relative shadow-lg shadow-orange cursor-pointer transition-all duration-300 ease-in-out"
+                : "px-4 font-medium pb-4 pt-6  text-lg relative transition-all duration-300 ease-in-out cursor-pointer"
             }
           >
             2. How do I find the car rental deals?
@@ -79,8 +79,8 @@ function Faq() {
           <p
             className={
               isDown == 3
-                ? "bg-orange px-4 font-medium pt-6 pb-4 text-lg relative shadow-lg shadow-orange transition-all duration-300 ease-in-out"
-                : "px-4 font-medium pb-4 pt-6  text-lg relative transition-all duration-300 ease-in-out"
+                ? "bg-orange px-4 font-medium pt-6 pb-4 text-lg relative shadow-lg shadow-orange cursor-pointer transition-all duration-300 ease-in-out"
+                : "px-4 font-medium pb-4 pt-6  text-lg relative transition-all duration-300 ease-in-out cursor-pointer"
             }
           >
             3. How do I find such low rental car prices?
